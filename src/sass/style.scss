@@ -1,0 +1,258 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: MillerBanner;
+  src: url("../font/MillerBanner.otf") format("opentype");
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  src: url("../font/HelveticaNeue.ttf") format("truetype");
+}
+
+.content__content {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  height: 110px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: HelveticaNeue;
+  h1 {
+    height: 29px;
+    font-family: MillerBanner;
+    font-size: 20px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #202020;
+  }
+  .fa-star {
+    color: #b69f58;
+  }
+  div:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.content-minutes {
+  width: 39px;
+  height: 16px;
+  font-size: 13px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #666666;
+}
+
+.content-kronor {
+  width: 42px;
+  height: 17px;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #202020;
+}
+
+.content__header {
+  display: flex;
+  align-items: CENTER;
+  justify-content: space-between;
+  height: 65px;
+  margin-left: 10px;
+  margin-right: 10px;
+  a {
+    display: flex;
+  }
+  h1 {
+    margin: 0px;
+    width: 37px;
+    height: 31px;
+    font-family: MillerBanner;
+    font-size: 22px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.13px;
+    text-align: center;
+    color: #202020;
+  }
+  .btn__back-front {
+    background-image: url(../images/icons/arrow.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 27px;
+  }
+  .btn__filter-front {
+    background-image: url(../images/icons/filter.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 27px;
+    height: 27px;
+  }
+}
+
+.content__menu {
+  display: flex;
+  justify-content: center;
+  height: 65px;
+  border-top: 0.5px solid #b69f58;
+  border-bottom: 0.5px solid #b69f58;
+  outline: none;
+  select {
+    flex: 1;
+  }
+}
+
+.content__hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 251px;
+  background-image: url(../images/background/image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  h2,
+  h4 {
+    font-family: "MillerBanner";
+    margin-left: 4%;
+  }
+  h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 22px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.15px;
+    color: #ffffff;
+  }
+  h4 {
+    font-size: 13px;
+    color: #ffffff;
+  }
+}
+
+.content__hero-rating {
+  display: flex;
+  margin-left: 4%;
+  justify-content: flex-start;
+  align-items: center;
+  color: #b69f58;
+}
+
+.content__selected_list {
+  margin-left: -25px;
+  h1 {
+    margin-bottom: 5px;
+  }
+  p {
+    margin-top: 5px;
+  }
+}
+
+.content__selected_info {
+  display: flex;
+  flex-direction: column;
+  i {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+  }
+  p {
+    margin: 0px;
+  }
+  .fa-chevron-down {
+    flex: 2;
+  }
+  .info__body {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+.studio-content_container {
+  display: flex;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 5px;
+  justify-content: space-around;
+  :nth-child(2) {
+    flex: 2;
+  }
+}
+
+.btn__container_info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid #b69f58;
+  div {
+    width: 50%;
+    height: 35px;
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  .Info .Schema {
+    width: 56px;
+    height: 17px;
+    font-family: HelveticaNeue;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #202020;
+  }
+}
+
+.btn__container_hero {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.btn__back {
+  background-image: url(../images/icons/arrow.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 27px;
+
+  margin-top: 13%;
+}
+
+.btn__heart {
+  background-image: url(../images/icons/heart.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 36px;
+  height: 27px;
+}

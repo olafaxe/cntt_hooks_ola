@@ -1,0 +1,16 @@
+{
+  "studios": [
+    {
+      "id": 1,
+      "name": "Sax & Fön",
+      "address": "Rådmansgatan 46",
+      "address2": "113 57 Stockholm",
+      "rating": "4",
+      "price": 300,
+      "time": "30min",
+      "phone": "08-522 389 20",
+      "hours": "19:00",
+      "website": "www.salongweb.se"
+    }
+  ]
+}
