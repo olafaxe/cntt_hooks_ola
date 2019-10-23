@@ -304,14 +304,14 @@ class App extends Component {
                         : null
                     }
                   >
-                    <ButtonContainer class={"btn__container_hero"}>
-                      <Button class={"btn__back"} link={"/"}></Button>
-                      <Button class={"btn__heart"}></Button>
+                    <ButtonContainer cls={"btn__container_hero"}>
+                      <Button cls={"btn__back"} link={"/"}></Button>
+                      <Button cls={"btn__heart"}></Button>
                     </ButtonContainer>
                   </Hero>
-                  <ButtonContainer className={"btn__container_info"}>
-                    <Button class={"Info"} text={"Info"}></Button>
-                    <Button class={"Schema"} text={"Schema"}></Button>
+                  <ButtonContainer cls={"btn__container_info"}>
+                    <Button cls={"Info"} text={"Info"}></Button>
+                    <Button cls={"Schema"} text={"Schema"}></Button>
                   </ButtonContainer>
                 </SelectedStudio>
               </Content>

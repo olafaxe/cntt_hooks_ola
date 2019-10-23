@@ -5,7 +5,7 @@ const Button = props => {
   return (
     <>
       <Link onClick={props.function} to={props.link}>
-        <div className={props.class}>
+        <div className={props.cls}>
           {props.children}
           <p>{props.text}</p>
         </div>
