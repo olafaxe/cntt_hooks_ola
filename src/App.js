@@ -30,7 +30,6 @@ class App extends Component {
       .then(data => {
         this.setState({ studios: data });
       })
-      .then(() => {})
       .catch(function(e) {
         console.log(e);
       });
