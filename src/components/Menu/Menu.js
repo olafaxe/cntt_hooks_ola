@@ -1,8 +1,10 @@
 import React from "react";
 
+import "./menu-style.scss";
+
 const Menu = props => {
   return (
-    <div className="content__menu">
+    <div className="container__menu">
       <select onChange={props.filtCheck}>
         <option>{props.filter1}</option>
         <option>{props.filter2}</option>

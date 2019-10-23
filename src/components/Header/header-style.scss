@@ -1,0 +1,25 @@
+.container__header {
+  display: flex;
+  align-items: CENTER;
+  justify-content: space-between;
+  height: 65px;
+  margin-left: 10px;
+  margin-right: 10px;
+  a {
+    display: flex;
+  }
+  h1 {
+    margin: 0px;
+    width: 37px;
+    height: 31px;
+    font-family: MillerBanner;
+    font-size: 22px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.13px;
+    text-align: center;
+    color: #202020;
+  }
+}

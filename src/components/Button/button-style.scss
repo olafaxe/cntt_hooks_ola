@@ -1,0 +1,68 @@
+.btn--back--list {
+  background-image: url(../../images/icons/arrow.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 27px;
+}
+.btn--filter--list {
+  background-image: url(../../images/icons/filter.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 27px;
+  height: 27px;
+}
+
+.btn--info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid #b69f58;
+  div {
+    width: 50%;
+    height: 35px;
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  .Info .Schema {
+    width: 56px;
+    height: 17px;
+    font-family: HelveticaNeue;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #202020;
+  }
+}
+
+.btn--hero {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.btn--back--select {
+  background-image: url(../../images/icons/arrow.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 27px;
+
+  margin-top: 13%;
+}
+
+.btn--heart {
+  background-image: url(../../images/icons/heart.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 36px;
+  height: 27px;
+}

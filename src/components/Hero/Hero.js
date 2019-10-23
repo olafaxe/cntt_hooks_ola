@@ -1,12 +1,15 @@
 import React from "react";
 import Rating from "../Rating/Rating";
+
+import "./hero-style.scss";
+
 const Hero = props => {
   return (
-    <div className="content__hero">
+    <div className="hero__content">
       {props.children}
       <div>
         <h2>{props.name}</h2>
-        <div className="content__hero-rating">
+        <div className="hero__content--rating">
           <Rating></Rating>
           <h4>(32)</h4>
         </div>

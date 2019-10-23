@@ -1,0 +1,36 @@
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 251px;
+  background-image: url(../../images/background/image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  h2,
+  h4 {
+    font-family: "MillerBanner";
+    margin-left: 4%;
+  }
+  h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 22px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.15px;
+    color: #ffffff;
+  }
+  h4 {
+    font-size: 13px;
+    color: #ffffff;
+  }
+}
+
+.hero__content--rating {
+  display: flex;
+  margin-left: 4%;
+  justify-content: flex-start;
+  align-items: center;
+  color: #b69f58;
+}
