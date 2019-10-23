@@ -26,16 +26,20 @@ class App extends Component {
 
   componentDidMount() {
     fetch("/studios", {})
-      .then(res => {
-        res.json();
-        console.log(res);
-      })
+      .then(res => res.clone().json())
       .then(data => {
         console.log(data);
-        this.setState({ studios: [...data] });
+        // data[.map(e => {
+        //   console.log(e);
+        // });]
+        this.setState({ studios: data }, console.log(this.state.studios));
       })
-      .catch(function() {
-        console.log("error");
+      .then(() => {
+        console.log(this.state.studios.studios);
+        // this.studioGeneration();
+      })
+      .catch(function(e) {
+        console.log(e);
       });
   }
 
@@ -58,7 +62,7 @@ class App extends Component {
   }
 
   navClick(e) {
-    let studios = this.state.studios;
+    let studios = this.state.studios.studios;
     studios.forEach(studio => {
       if (e === studio.id) {
         let selectedStudio = studio;
@@ -67,83 +71,170 @@ class App extends Component {
     });
   }
 
+  // studioGeneration() {
+  //   let studio = (
+  //     <>
+  //       {this.state.studios.studios.map(e => {
+  //         if (this.state.setFilter === "Alla") {
+  //           return (
+  //             <>
+  //               <Studio
+  //                 content={"content__content"}
+  //                 selectedContent={"content__selected_list"}
+  //                 id={e.id}
+  //                 name={e.name}
+  //                 price={e.price}
+  //                 address={e.address}
+  //                 time={e.time}
+  //                 rating={e.rating}
+  //                 function={() => this.navClick(e.id)}
+  //                 link={"/studio"}
+  //                 text={"gå till studio"}
+  //               >
+  //                 <Button function={() => this.navClick(e.id)} link={"/studio"}>
+  //                   <i className="fas fa-chevron-right"></i>
+  //                 </Button>
+  //               </Studio>
+  //             </>
+  //           );
+  //         }
+  //         if (this.state.sale) {
+  //           if (e.price < this.state.setFilter) {
+  //             return (
+  //               <>
+  //                 <Studio
+  //                   content={"content__content"}
+  //                   selectedContent={"content__selected_list"}
+  //                   id={e.id}
+  //                   name={e.name}
+  //                   price={e.price}
+  //                   address={e.address}
+  //                   time={e.time}
+  //                   rating={e.rating}
+  //                 >
+  //                   <Button
+  //                     function={() => this.navClick(e.id)}
+  //                     link={"/studio"}
+  //                   >
+  //                     <i className="fas fa-chevron-right"></i>
+  //                   </Button>
+  //                 </Studio>
+  //               </>
+  //             );
+  //           }
+  //         } else if (this.state.setFilter !== "Alla") {
+  //           if (e.price > this.state.setFilter) {
+  //             return (
+  //               <>
+  //                 <Studio
+  //                   content={"content__content"}
+  //                   selectedContent={"content__selected_list"}
+  //                   id={e.id}
+  //                   name={e.name}
+  //                   price={e.price}
+  //                   address={e.address}
+  //                   time={e.time}
+  //                   rating={e.rating}
+  //                 >
+  //                   <Button
+  //                     function={() => this.navClick(e.id)}
+  //                     link={"/studio"}
+  //                   >
+  //                     <i className="fas fa-chevron-right"></i>
+  //                   </Button>
+  //                 </Studio>
+  //               </>
+  //             );
+  //           }
+  //         }
+  //       })}
+  //     </>
+  //   );
+  //   return studio;
+  // }
+
   render() {
     let studio = (
       <>
-        {this.state.studios.map(e => {
-          if (this.state.setFilter === "Alla") {
-            return (
-              <>
-                <Studio
-                  content={"content__content"}
-                  selectedContent={"content__selected_list"}
-                  id={e.id}
-                  name={e.name}
-                  price={e.price}
-                  address={e.address}
-                  time={e.time}
-                  rating={e.rating}
-                  function={() => this.navClick(e.id)}
-                  link={"/studio"}
-                  text={"gå till studio"}
-                >
-                  <Button function={() => this.navClick(e.id)} link={"/studio"}>
-                    <i className="fas fa-chevron-right"></i>
-                  </Button>
-                </Studio>
-              </>
-            );
-          }
-          if (this.state.sale) {
-            if (e.price < this.state.setFilter) {
-              return (
-                <>
-                  <Studio
-                    content={"content__content"}
-                    selectedContent={"content__selected_list"}
-                    id={e.id}
-                    name={e.name}
-                    price={e.price}
-                    address={e.address}
-                    time={e.time}
-                    rating={e.rating}
-                  >
-                    <Button
+        {this.state.studios.studios
+          ? this.state.studios.studios.map(e => {
+              if (this.state.setFilter === "Alla") {
+                return (
+                  <>
+                    <Studio
+                      content={"content__content"}
+                      selectedContent={"content__selected_list"}
+                      id={e.id}
+                      name={e.name}
+                      price={e.price}
+                      address={e.address}
+                      time={e.time}
+                      rating={e.rating}
                       function={() => this.navClick(e.id)}
                       link={"/studio"}
+                      text={"gå till studio"}
                     >
-                      <i className="fas fa-chevron-right"></i>
-                    </Button>
-                  </Studio>
-                </>
-              );
-            }
-          } else if (this.state.setFilter !== "Alla") {
-            if (e.price > this.state.setFilter) {
-              return (
-                <>
-                  <Studio
-                    content={"content__content"}
-                    selectedContent={"content__selected_list"}
-                    id={e.id}
-                    name={e.name}
-                    price={e.price}
-                    address={e.address}
-                    time={e.time}
-                    rating={e.rating}
-                  >
-                    <Button
-                      function={() => this.navClick(e.id)}
-                      link={"/studio"}
-                    >
-                      <i className="fas fa-chevron-right"></i>
-                    </Button>
-                  </Studio>
-                </>
-              );
-            }
-          }
-        })}
+                      <Button
+                        function={() => this.navClick(e.id)}
+                        link={"/studio"}
+                      >
+                        <i className="fas fa-chevron-right"></i>
+                      </Button>
+                    </Studio>
+                  </>
+                );
+              }
+              if (this.state.sale) {
+                if (e.price < this.state.setFilter) {
+                  return (
+                    <>
+                      <Studio
+                        content={"content__content"}
+                        selectedContent={"content__selected_list"}
+                        id={e.id}
+                        name={e.name}
+                        price={e.price}
+                        address={e.address}
+                        time={e.time}
+                        rating={e.rating}
+                      >
+                        <Button
+                          function={() => this.navClick(e.id)}
+                          link={"/studio"}
+                        >
+                          <i className="fas fa-chevron-right"></i>
+                        </Button>
+                      </Studio>
+                    </>
+                  );
+                }
+              } else if (this.state.setFilter !== "Alla") {
+                if (e.price > this.state.setFilter) {
+                  return (
+                    <>
+                      <Studio
+                        content={"content__content"}
+                        selectedContent={"content__selected_list"}
+                        id={e.id}
+                        name={e.name}
+                        price={e.price}
+                        address={e.address}
+                        time={e.time}
+                        rating={e.rating}
+                      >
+                        <Button
+                          function={() => this.navClick(e.id)}
+                          link={"/studio"}
+                        >
+                          <i className="fas fa-chevron-right"></i>
+                        </Button>
+                      </Studio>
+                    </>
+                  );
+                }
+              }
+            })
+          : null}
       </>
     );
 
