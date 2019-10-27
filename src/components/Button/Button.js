@@ -3,15 +3,27 @@ import { Link } from "react-router-dom";
 
 import "./button-style.scss";
 
-const Button = props => {
+const Button = ({ id, link, text, cls, clickHandleFu }) => {
   return (
     <>
-      <Link onClick={props.function} to={props.link}>
-        <div className={props.cls}>
-          {props.children}
-          <p>{props.text}</p>
-        </div>
-      </Link>
+      {link === "/studio" ? (
+        <>
+          <div id={id} className={cls}>
+            <Link onClick={clickHandleFu} to={link}>
+              <i id={id} className="fas fa-chevron-right"></i>
+            </Link>
+
+            {/* {props.children} */}
+            <p>{text}</p>
+          </div>
+        </>
+      ) : (
+        <>
+          <Link id={id} onClick={clickHandleFu} to={link}>
+            <div className={cls}>{text}</div>
+          </Link>
+        </>
+      )}
     </>
   );
 };

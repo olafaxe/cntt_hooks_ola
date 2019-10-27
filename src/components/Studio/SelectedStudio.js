@@ -1,30 +1,61 @@
 import React from "react";
+import Hero from "../Hero/Hero";
+import ButtonContainer from "../Button/ButtonContainer";
+import Button from "../Button/Button";
 
 import "./studio-style.scss";
 
-const SelectedStudio = props => {
+const SelectedStudio = ({
+  content,
+  selectedContent,
+  selStudiosSt,
+  clickHandleFu
+}) => {
   return (
-    <div className={props.content} id={props.key}>
-      {props.children}
-      <div className={props.selectedContent}>
+    <div className={content} id={selStudiosSt.key}>
+      <Hero name={selStudiosSt ? selStudiosSt.name : null}>
+        <ButtonContainer cls={"btn--hero"}>
+          <Button
+            clickHandleFu={clickHandleFu}
+            cls={"btn--back--select"}
+            link={"/"}
+          />
+          <Button clickHandleFu={clickHandleFu} cls={"btn--heart"} link={"/"} />
+        </ButtonContainer>
+      </Hero>
+      <ButtonContainer cls={"btn--info"}>
+        <Button
+          clickHandleFu={clickHandleFu}
+          cls={"Info selected"}
+          text={"Info"}
+          link={"/"}
+        />
+        <Button
+          clickHandleFu={clickHandleFu}
+          cls={"Schema"}
+          text={"Schema"}
+          link={"/"}
+        />
+      </ButtonContainer>
+      <div className={selectedContent}>
         <div className="selectedstudio__content">
           <i className="fas fa-map-marker-alt"></i>
           <p>
-            {props.address}, {props.address2}
+            {selStudiosSt.address}, {selStudiosSt.address2}
           </p>
         </div>
         <div className="selectedstudio__content">
           <i className="far fa-clock"></i>
-          <p>Öppet till {props.hours} idag</p>
+          <p>Öppet till {selStudiosSt.hours} idag</p>
           <i className="fas fa-chevron-down"></i>
         </div>
         <div className="selectedstudio__content">
           <i className="fas fa-map-marker-alt"></i>
-          <p>{props.phone}</p>
+          <p>{selStudiosSt.phone}</p>
         </div>
         <div className="selectedstudio__content">
           <i className="fas fa-globe"></i>
-          <p>{props.website}</p>
+          <p>{selStudiosSt.website}</p>
         </div>
         <div className="selectedstudio__content">
           <p className="info__body">

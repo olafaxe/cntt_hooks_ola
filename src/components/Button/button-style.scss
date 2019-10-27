@@ -17,14 +17,37 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 2px solid #b69f58;
-  div {
-    width: 50%;
-    height: 35px;
-    text-align: center;
+  height: 35px;
+
+  a {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    div {
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      height: 35px;
+      text-align: center;
+      display: flex;
+      a {
+        flex: 1;
+      }
+      p {
+        flex: 1;
+      }
+    }
   }
+
   a {
     text-decoration: none;
+  }
+  .selected {
+    border-bottom: 2px solid #b69f58;
+    margin-bottom: -2px;
   }
   .Info .Schema {
     width: 56px;
